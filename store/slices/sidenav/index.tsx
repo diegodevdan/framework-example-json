@@ -9,9 +9,9 @@ interface SidenavSubcomponentProps {
 interface SubComponentsProps {
     accountComponent:SidenavSubcomponentProps,
     warningsComponent:SidenavSubcomponentProps,
-    headerComponent:SidenavSubcomponentProps,
     servicesComponent:SidenavSubcomponentProps,
     sharesComponent:SidenavSubcomponentProps,
+    headerComponent?:SidenavSubcomponentProps,
     attentionComponent?: SidenavSubcomponentProps,
     helpComponent?: SidenavSubcomponentProps
 }

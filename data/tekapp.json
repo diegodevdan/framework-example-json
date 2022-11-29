@@ -28,21 +28,26 @@
       }
     }
   },
-  "accountComponent": {
-    "loadData": "https://endpoint/1",
-    "navigateTo": "AccountDetailComponent"
-  },
-  "warningsComponent": {
-    "loadData": "https://endpoint/1",
-    "alert": "WarningDetailComponent"
-  },
-  "servicesComponent": {
-    "loadData": "https://endpoint/1"
-  },
-  "sharesComponent": {
-    "loadData": "https://endpoint/1"
-  },
-  "HeaderComponent": {
-    "loadData": "https://endpoint/1"
+  "componentsData": {
+    "accountComponent": {
+      "loadData": "http://localhost:3000/api/components",
+      "navigateTo": "/account-details"
+    },
+    "warningsComponent": {
+      "loadData": "http://localhost:3000/api/components",
+      "navigateTo": "/warnings-details"
+    },
+    "servicesComponent": {
+      "loadData": "http://localhost:3000/api/components",
+      "navigateTo": "/services-details"
+    },
+    "sharesComponent": {
+      "loadData": "http://localhost:3000/api/components",
+      "navigateTo": "/shares-details"
+    },
+    "HeaderComponent": {
+      "loadData": "http://localhost:3000/api/components",
+      "navigateTo": "/header-details"
+    }
   }
 }

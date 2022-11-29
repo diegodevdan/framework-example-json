@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import {sidenavSlice, initialPageSlice} from './slices'
+import {sidenavSlice, initialPageSlice, componentsDataSlice} from './slices'
 
 export const store = configureStore({
     reducer: {
         sidenav: sidenavSlice.reducer,
-        initialPage: initialPageSlice.reducer
+        initialPage: initialPageSlice.reducer,
+        componentsData: componentsDataSlice.reducer
     },
 })
 

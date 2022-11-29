@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 export const Account = () => {
+
     return (
         <div>
             <h1>Account component</h1>

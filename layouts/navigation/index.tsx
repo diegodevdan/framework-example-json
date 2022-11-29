@@ -15,7 +15,8 @@ export const NavigationLayout = ({children}:NavigationProps) => {
         <div className={styles.main}>
             <Navbar />
             <div className={styles.contChildren}>
-                {existsSidenav && <Sidenav />}
+                {/*{existsSidenav && <Sidenav />}*/}
+                <Sidenav />
                 <div className={styles.children}>
                     {children}
                 </div>

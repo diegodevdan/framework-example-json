@@ -33,7 +33,7 @@ const initialState:InitialPageProps  = {
 }
 
 export const initialPageSlice = createSlice({
-    name: 'sidenav',
+    name: 'initial-page',
     initialState,
     reducers: {
         setInitialConfig: (state, action:PayloadAction<InitialPageProps>) => {

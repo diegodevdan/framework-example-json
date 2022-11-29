@@ -2,7 +2,7 @@ import {NavigationLayout} from "../layouts";
 import {GetServerSideProps} from "next";
 import {useEffect, useState} from "react";
 import {useAppDispatch} from "../hooks";
-import {setInitialConfig, setSubcomponents, showSideNav} from "../store/slices";
+import {setData, setInitialConfig, setSubcomponents, showSideNav} from "../store/slices";
 import {useRouter} from "next/router";
 
 interface HomeProps {
@@ -40,15 +40,26 @@ export default function Home({Tekapp}:HomeProps) {
         dispatch(showSideNav(initConfig.SidenavComponent.existsSidenav));
     }
 
+    const setComponentsData = () => {
+        dispatch(setData({
+            account: initConfig.componentsData.accountComponent,
+            header: initConfig.componentsData.headerComponent,
+            shares: initConfig.componentsData.sharesComponent,
+            services: initConfig.componentsData.servicesComponent,
+            warnings: initConfig.componentsData.warningsComponent,
+        }))
+    }
+
     useEffect(() => {
         setSidenavConfig();
         setPageConfig();
-        push(initConfig.initialPage.route);
+        setComponentsData();
+        // push(initConfig.initialPage.route);
     },[initConfig.initialPage.route])
 
     return (
       <NavigationLayout>
-        <h1>Prox to render</h1>
+        <h1>Main page</h1>
       </NavigationLayout>
   )
 }

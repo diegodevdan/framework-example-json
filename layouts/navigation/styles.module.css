@@ -1,0 +1,12 @@
+.main{
+
+}
+
+
+.contChildren{
+    display: flex;
+}
+
+.children{
+    padding: 20px;
+}

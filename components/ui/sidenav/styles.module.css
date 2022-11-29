@@ -1,0 +1,6 @@
+.main{
+    width: 350px;
+    background-color: white;
+    height: calc(100vh - 86px);
+    border-right: 2px solid black;
+}

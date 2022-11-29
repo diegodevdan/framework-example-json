@@ -7,6 +7,7 @@ interface SidenavSubcomponentProps {
 }
 
 interface SidenavComponentProps {
+    existsSidenav: boolean,
     accountComponent:SidenavSubcomponentProps,
     warningsComponent:SidenavSubcomponentProps,
     servicesComponent:SidenavSubcomponentProps,
@@ -14,6 +15,7 @@ interface SidenavComponentProps {
 }
 
 const initialState: SidenavComponentProps = {
+    existsSidenav: false,
     accountComponent: {
         order: 1
     },
@@ -32,11 +34,11 @@ export const sidenavSlice = createSlice({
     name: 'sidenav',
     initialState,
     reducers: {
-        setOrder: (state, action:PayloadAction<SidenavComponentProps>) => {
+        setSubComponentsOrder: (state, action:PayloadAction<SidenavComponentProps>) => {
             return action.payload
         },
     },
 })
 
-export const { setOrder } = sidenavSlice.actions
+export const { setSubComponentsOrder } = sidenavSlice.actions
 

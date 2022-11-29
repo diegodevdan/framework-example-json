@@ -10,15 +10,20 @@
       "footer": "FooterComponent"
     }
   },
-  "SidenavComponent": [
-    {
-      "accountComponent": { "order": 1 },
-      "warningsComponent": { "order": 2 },
-      "servicesComponent": { "order": 3 },
-      "sharesComponent": { "order": 4 }
+  "SidenavComponent": {
+    "accountComponent": {
+      "order": 3
+    },
+    "warningsComponent": {
+      "order": 1
+    },
+    "servicesComponent": {
+      "order": 2
+    },
+    "sharesComponent": {
+      "order": 4
     }
-  ],
-
+  },
   "accountComponent": {
     "loadData": "https://endpoint/1",
     "navigateTo": "AccountDetailComponent"

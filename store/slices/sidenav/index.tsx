@@ -6,39 +6,54 @@ interface SidenavSubcomponentProps {
     navigateTo?:string
 }
 
-interface SidenavComponentProps {
-    existsSidenav: boolean,
+interface SubComponentsProps {
     accountComponent:SidenavSubcomponentProps,
     warningsComponent:SidenavSubcomponentProps,
+    headerComponent:SidenavSubcomponentProps,
     servicesComponent:SidenavSubcomponentProps,
-    sharesComponent:SidenavSubcomponentProps
+    sharesComponent:SidenavSubcomponentProps,
+    attentionComponent?: SidenavSubcomponentProps,
+    helpComponent?: SidenavSubcomponentProps
+}
+
+interface SidenavComponentProps {
+    existsSidenav: boolean,
+    subComponents: SubComponentsProps
 }
 
 const initialState: SidenavComponentProps = {
     existsSidenav: false,
-    accountComponent: {
-        order: 1
-    },
-    servicesComponent: {
-        order: 2
-    },
-    warningsComponent: {
-        order: 3
-    },
-    sharesComponent: {
-        order: 4
-    },
+    subComponents: {
+        accountComponent: {
+            order: 1
+        },
+        headerComponent: {
+            order: 5
+        },
+        servicesComponent: {
+            order: 2
+        },
+        warningsComponent: {
+            order: 3
+        },
+        sharesComponent: {
+            order: 4
+        },
+    }
 }
 
 export const sidenavSlice = createSlice({
     name: 'sidenav',
     initialState,
     reducers: {
-        setSubComponentsOrder: (state, action:PayloadAction<SidenavComponentProps>) => {
-            return action.payload
+        setSubcomponents: (state, action:PayloadAction<SubComponentsProps>) => {
+            state.subComponents = action.payload
         },
+        showSideNav: (state, action:PayloadAction<boolean>) => {
+            state.existsSidenav = action.payload;
+        }
     },
 })
 
-export const { setSubComponentsOrder } = sidenavSlice.actions
+export const { setSubcomponents, showSideNav } = sidenavSlice.actions
 

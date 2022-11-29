@@ -11,17 +11,20 @@
     }
   },
   "SidenavComponent": {
-    "accountComponent": {
-      "order": 3
-    },
-    "warningsComponent": {
-      "order": 1
-    },
-    "servicesComponent": {
-      "order": 2
-    },
-    "sharesComponent": {
-      "order": 4
+    "existsSidenav":  true,
+    "subComponents": {
+      "accountComponent": {
+        "order": 3
+      },
+      "warningsComponent": {
+        "order": 1
+      },
+      "servicesComponent": {
+        "order": 2
+      },
+      "sharesComponent": {
+        "order": 4
+      }
     }
   },
   "accountComponent": {

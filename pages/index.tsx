@@ -2,7 +2,7 @@ import {NavigationLayout} from "../layouts";
 import {GetServerSideProps} from "next";
 import {useEffect, useState} from "react";
 import {useAppDispatch} from "../hooks";
-import {setSubComponentsOrder} from "../store/slices";
+import {setSubcomponents, showSideNav} from "../store/slices";
 
 interface HomeProps {
     Tekapp: any
@@ -13,10 +13,14 @@ export default function Home({Tekapp}:HomeProps) {
     const [initConfig, setInitConfig] = useState(Tekapp || {});
 
     const setSidenavConfig = () => {
-        dispatch(setSubComponentsOrder({
-            ...initConfig.SidenavComponent,
-            existsSidenav: true
+        dispatch(setSubcomponents({
+            accountComponent: initConfig.SidenavComponent.subComponents.accountComponent,
+            warningsComponent: initConfig.SidenavComponent.subComponents.warningsComponent,
+            servicesComponent: initConfig.SidenavComponent.subComponents.servicesComponent,
+            sharesComponent: initConfig.SidenavComponent.subComponents.sharesComponent,
+            headerComponent: initConfig.SidenavComponent.subComponents.headerComponent
         }));
+        dispatch(showSideNav(initConfig.SidenavComponent.existsSidenav));
     }
 
     useEffect(() => {

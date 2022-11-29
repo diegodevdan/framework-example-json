@@ -9,13 +9,13 @@ interface NavigationProps {
 }
 
 export const NavigationLayout = ({children}:NavigationProps) => {
-    const {...sidenav} = useAppSelector(state => state.sidenav);
+    const {existsSidenav} = useAppSelector(state => state.sidenav);
 
     return (
         <div className={styles.main}>
             <Navbar />
             <div className={styles.contChildren}>
-                {sidenav.existsSidenav && <Sidenav />}
+                {existsSidenav && <Sidenav />}
                 <div className={styles.children}>
                     {children}
                 </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Account = () => {
+export const Attention = () => {
     return (
         <div>
-            <h1>Account component</h1>
+            <h1>Attention component</h1>
         </div>
     );
 };

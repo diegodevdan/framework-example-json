@@ -1,6 +1,7 @@
 {
   "initialPage": {
-    "page": "DashboardPage",
+    "page": "HomePage",
+    "route": "/home",
     "type": "MainTemplate",
     "orientation": "left",
     "components": {

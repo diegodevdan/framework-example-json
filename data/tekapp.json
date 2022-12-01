@@ -15,16 +15,86 @@
     "existsSidenav":  true,
     "subComponents": {
       "accountComponent": {
-        "order": 3
+        "order": 3,
+        "title": "ACCOUNT",
+        "icon": "user",
+        "backRoute": "/",
+        "nextRoute": "/services-details",
+        "data": {
+          "text": [
+            {
+              "icon": "",
+              "text": "Sarah Garcia"
+            },
+            {
+              "icon": "",
+              "text": "Member Since 2008"
+            }
+          ]
+        }
       },
+
       "warningsComponent": {
-        "order": 1
+        "order": 1,
+        "title": "WARNINGS",
+        "icon": "caution",
+        "backRoute": "/",
+        "nextRoute": "/services-details",
+        "data": {
+          "text": [
+            {
+              "icon": "",
+              "text": "031"
+            },
+            {
+              "icon": "",
+              "text": "050"
+            }
+          ]
+        }
       },
+
       "servicesComponent": {
-        "order": 2
+        "order": 2,
+        "title": "SERVICES",
+        "icon": "thumb",
+        "backRoute": "/",
+        "nextRoute": "/services-details",
+        "data": {
+          "text": [
+            {
+              "icon": "success",
+              "text": "Mobile Banking"
+            },
+            {
+              "icon": "success",
+              "text": "eStatements"
+            },
+            {
+              "icon": "fail",
+              "text": "Home Banking"
+            }
+          ]
+        }
       },
       "sharesComponent": {
-        "order": 4
+        "order": 4,
+        "title": "SHARES",
+        "icon": "cash",
+        "backRoute": "/",
+        "nextRoute": "/services-details",
+        "data": {
+          "text": [
+            {
+              "icon": "",
+              "text": "031"
+            },
+            {
+              "icon": "",
+              "text": "050"
+            }
+          ]
+        }
       }
     }
   },

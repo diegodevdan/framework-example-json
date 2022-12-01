@@ -21,8 +21,11 @@ export default function AccountPage(){
     const {account} = useAppSelector(state => state.componentsData);
     const accountInfo = useAppSelector(state => state.accountComponent);
     const {loadData} = account;
+
     const [info, setInfo] = useState({} as AccountDataProps);
+
     const [{topSection, middleSection, bottomSection}, setMainArea] = useState({} as MainAreaProps);
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm<InputProps>();
 
     const getData = async () => {
@@ -55,6 +58,7 @@ export default function AccountPage(){
                 {
                     topSection && middleSection && bottomSection && (
                         <div className={styles.mainArea}>
+
                             <div className={styles.topSection}>
                                 <h3>{topSection.header.title}</h3>
                                 <h4>{topSection.header.subtitle}</h4>

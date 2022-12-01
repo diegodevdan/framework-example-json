@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {AccountDataProps} from "../../../interfaces";
 
 interface AccountSliceProps {
     name: string,

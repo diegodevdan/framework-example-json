@@ -65,7 +65,14 @@ const initState:AccountDataProps = {
                         variant: 'filled',
                         color: 'dark',
                         type: 'submit',
-                    }
+                    },
+                    {
+                        title: 'Test',
+                        route: '/services-details',
+                        variant: 'filled',
+                        color: 'dark',
+                        type: 'submit',
+                    },
                 ],
             }
             ,
@@ -84,7 +91,14 @@ const initState:AccountDataProps = {
                         variant: 'filled',
                         color: 'dark',
                         type: 'submit',
-                    }
+                    },
+                    {
+                        title: 'Next',
+                        route: '/services-details',
+                        variant: 'filled',
+                        color: 'dark',
+                        type: 'submit',
+                    },
                 ],
             }
         }

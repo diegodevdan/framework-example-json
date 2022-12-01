@@ -18,10 +18,11 @@ export interface inputProps {
 
 export interface footerButtonProps {
     title: string,
-    route: string,
+    route?: string,
     variant: string,
     color: string,
     type: string,
+    action?: () =>  void
 }
 
 export interface MainAreaProps {

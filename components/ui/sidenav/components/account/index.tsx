@@ -4,7 +4,7 @@ export const Account = () => {
 
     return (
         <div>
-            <h1>Account component</h1>
+            <h1>ELA/EMA</h1>
         </div>
     );
 };

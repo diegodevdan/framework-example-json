@@ -3,13 +3,14 @@ import styles from './styles.module.css';
 import {useAppSelector} from "../../../hooks";
 import {Account, Attention, Header, Help, Services, Shares, Warnings} from "./components";
 import Link from "next/link";
+import {CardGeneric} from "../card-generic";
 
 interface SidenavProps {
     Account?: JSX.Element;
 }
 
 // TODO: importaciones dinamicas de componentes.
-export const Sidenav:FC<SidenavProps> = ({}) => {
+export const Sidenav: FC<SidenavProps> = ({}) => {
     const {subComponents} = useAppSelector(state => state.sidenav);
     const {...comps} = useAppSelector(state => state.componentsData);
     const [components, setComponents] = useState({});
@@ -23,6 +24,8 @@ export const Sidenav:FC<SidenavProps> = ({}) => {
         ])
         // @ts-ignore
         setComponents(account, services, shares, warnings)
+        // console.log(subComponents)
+        // console.log(Object.keys(subComponents))
     }
 
     useEffect(() => {
@@ -37,51 +40,19 @@ export const Sidenav:FC<SidenavProps> = ({}) => {
             {
                 subComponents.accountComponent && (
                     <Link href={comps.account.navigateTo}>
-                        <Account />
+                        <Account/>
                     </Link>
                 )
             }
             {
-                subComponents.attentionComponent && (
-                    <Link href={comps.account.navigateTo}>
-                        <Attention />
-                    </Link>
-                )
-            }
-            {
-                subComponents.headerComponent && (
-                    <Link href={comps.header.navigateTo}>
-                        <Header />
-                    </Link>
-                )
-            }
-            {
-                subComponents.helpComponent && (
-                    <Link href={comps.header.navigateTo}>
-                        <Help />
-                    </Link>
-                )
-            }
-            {
-                subComponents.servicesComponent && (
-                    <Link href={comps.services.navigateTo}>
-                        <Services />
-                    </Link>
-                )
-            }
-            {
-                subComponents.sharesComponent && (
-                    <Link href={comps.shares.navigateTo}>
-                        <Shares />
-                    </Link>
-                )
-            }
-            {
-                subComponents.warningsComponent && (
-                    <Link href={comps.warnings.navigateTo}>
-                        <Warnings />
-                    </Link>
-                )
+                Object.keys(subComponents) && Object.keys(subComponents).map(el => (
+                    <div>
+                        <CardGeneric
+                            data={subComponents[el]}
+                        />
+                    </div>
+
+                ))
             }
         </div>
     );

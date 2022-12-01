@@ -14,7 +14,10 @@ export default function ServicesPage(){
     const getData = async () => {
         const resp = await fetch(loadData)
         const data = await resp.json();
+
         setInfo(data);
+
+        console.log(data)
     }
 
     useEffect(() => {

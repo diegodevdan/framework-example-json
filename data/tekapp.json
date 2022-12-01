@@ -30,7 +30,7 @@
   },
   "componentsData": {
     "accountComponent": {
-      "loadData": "http://localhost:3000/api/components",
+      "loadData": "http://localhost:3000/api/account",
       "navigateTo": "/account-details"
     },
     "warningsComponent": {

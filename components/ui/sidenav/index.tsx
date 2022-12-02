@@ -4,6 +4,7 @@ import {useAppSelector} from "../../../hooks";
 import {Account, Attention, Header, Help, Services, Shares, Warnings} from "./components";
 import Link from "next/link";
 import {CardGeneric} from "../card-generic";
+import _ from 'lodash';
 
 interface SidenavProps {
     Account?: JSX.Element;
@@ -12,6 +13,7 @@ interface SidenavProps {
 // TODO: importaciones dinamicas de componentes.
 export const Sidenav: FC<SidenavProps> = ({}) => {
     const {subComponents} = useAppSelector(state => state.sidenav);
+    const [sortComponents, setSortComponents] = useState([]);
     const {...comps} = useAppSelector(state => state.componentsData);
     const [components, setComponents] = useState({});
 
@@ -23,14 +25,26 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
             fetch(comps.warnings.loadData),
         ])
         // @ts-ignore
-        setComponents(account, services, shares, warnings)
-        // console.log(subComponents)
-        // console.log(Object.keys(subComponents))
+        setComponents(account, services, shares, warnings);
+
+        setSortComponents(subComponents.accountComponent);
+        console.log(sortComponents)
+    }
+
+    function sortElements(){
+
     }
 
     useEffect(() => {
         getInitialFetch();
     }, [])
+
+    useEffect(() => {
+        console.log(sortComponents);
+    }, [sortComponents]);
+
+
+
 
     return (
         <div className={styles.main}>

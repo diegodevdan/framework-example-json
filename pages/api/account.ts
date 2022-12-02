@@ -10,7 +10,7 @@ const initState:AccountDataProps = {
                 header: {
                     title: "Applicant Information",
                     subtitle: "Member Eligibility",
-                    text: 'In order for Us to open Your membership, We ask that You deposit ' +
+                    text: 'TEST: In order for Us to open Your membership, We ask that You deposit ' +
                         'the minimum required balance of $50 to Your Savings account. ' +
                         'Please note that the $50 remains on hold in Your account until ' +
                         'such time as You choose to close Your membership.'

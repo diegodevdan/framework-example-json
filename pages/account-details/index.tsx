@@ -92,7 +92,7 @@ export default function AccountPage(){
                                                 <Button
                                                     variant={el.variant}
                                                     color={el.color}
-                                                    type={'submit'}
+                                                    type={el.type}
                                                     radius="xs"
                                                     size={'md'}
                                                     className={styles.button}

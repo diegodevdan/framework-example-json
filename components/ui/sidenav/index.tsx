@@ -35,7 +35,7 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
     return (
         <div className={styles.main}>
             <Link href={'/'}>
-                <h1>Home</h1>
+                <h1 className={styles.headerHome}>Home</h1>
             </Link>
             {
                 subComponents.accountComponent && (
@@ -44,16 +44,20 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
                     </Link>
                 )
             }
-            {
-                Object.keys(subComponents) && Object.keys(subComponents).map(el => (
-                    <div>
-                        <CardGeneric
-                            data={subComponents[el]}
-                        />
-                    </div>
 
-                ))
-            }
+            <div>
+                <h1 className={styles.headerCheckDisplay}>Account Overview</h1>
+                {
+                    Object.keys(subComponents) && Object.keys(subComponents).map(el => (
+                        <div>
+                            <CardGeneric
+                                data={subComponents[el]}
+                            />
+                        </div>
+
+                    ))
+                }
+            </div>
         </div>
     );
 }

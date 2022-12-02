@@ -4,3 +4,22 @@
     height: calc(100vh - 86px);
     border-right: 2px solid black;
 }
+
+
+.headerHome{
+    background-color: black;
+    margin: 0;
+    color: white;
+    padding-left: 10px;
+}
+
+.headerCheckDisplay{
+    background-color: #00bbff;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 5px 5px 10px 10px;
+    font-size: 20px;
+    font-weight: 500;
+}

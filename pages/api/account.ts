@@ -27,6 +27,7 @@ const initState:AccountDataProps = {
                         required: true,
                         maxLength: 50,
                         minLength: 2,
+                        label: 'Name *'
                     },
                     {
                         name: 'firstLastName',
@@ -34,6 +35,7 @@ const initState:AccountDataProps = {
                         required: true,
                         maxLength: 50,
                         minLength: 2,
+                        label: 'First name *'
                     },
                     {
                         name: 'secondLastName',
@@ -41,6 +43,7 @@ const initState:AccountDataProps = {
                         required: true,
                         maxLength: 50,
                         minLength: 2,
+                        label: 'Second name *'
                     },
                     {
                         name: 'birthday',
@@ -48,6 +51,7 @@ const initState:AccountDataProps = {
                         required: true,
                         maxLength: 50,
                         minLength: 2,
+                        label: 'Birthday *'
                     }
                 ],
 
@@ -65,41 +69,11 @@ const initState:AccountDataProps = {
                         variant: 'filled',
                         color: 'dark',
                         type: 'submit',
-                    },
-                    {
-                        title: 'Test',
-                        route: '/services-details',
-                        variant: 'filled',
-                        color: 'dark',
-                        type: 'submit',
-                    },
+                    }
                 ],
             }
             ,
             bottomSection: {
-                navigationButtons: [
-                    {
-                        title: 'Back',
-                        route: '/',
-                        variant: 'outline',
-                        color: 'dark',
-                        type: 'button',
-                    },
-                    {
-                        title: 'Next',
-                        route: '/services-details',
-                        variant: 'filled',
-                        color: 'dark',
-                        type: 'submit',
-                    },
-                    {
-                        title: 'Next',
-                        route: '/services-details',
-                        variant: 'filled',
-                        color: 'dark',
-                        type: 'submit',
-                    },
-                ],
             }
         }
     }

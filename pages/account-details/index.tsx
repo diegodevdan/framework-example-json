@@ -12,7 +12,7 @@ interface InputProps {
     name: string,
     firstLastName: string,
     secondLastName: string,
-    birthday: string
+    birthday: string,
 }
 
 export default function AccountPage(){
@@ -72,6 +72,7 @@ export default function AccountPage(){
                                     {
                                         middleSection.form.map(el => (
                                             <div>
+                                                <label htmlFor={el.name}>{el.label}</label>
                                                 <input
                                                     defaultValue={accountInfo[el.name]}
                                                     type={el.type}
@@ -85,13 +86,16 @@ export default function AccountPage(){
                                         ))
                                     }
 
-                                    <div>
+                                    <div className={styles.contButtons}>
                                         {
                                             middleSection.navigationButtons.map(el => (
                                                 <Button
                                                     variant={el.variant}
                                                     color={el.color}
                                                     type={'submit'}
+                                                    radius="xs"
+                                                    size={'md'}
+                                                    className={styles.button}
                                                 >
                                                     {el.title}
                                                 </Button>

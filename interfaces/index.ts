@@ -13,7 +13,8 @@ export interface inputProps {
     type: string,
     required: boolean,
     maxLength: number,
-    minLength: number
+    minLength: number,
+    label: string
 }
 
 export interface footerButtonProps {

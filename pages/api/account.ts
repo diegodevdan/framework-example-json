@@ -20,39 +20,68 @@ const initState:AccountDataProps = {
                 header: {
                     title: "Applicant Information"
                 },
+                grid: 3,
                 form: [
                     {
+                        order: 1,
                         name: 'name',
                         type: 'text',
                         required: true,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'Name *'
+                        label: 'Name *',
+                        labelProps: {
+                            alignText: 'left'
+                        }
                     },
                     {
+                        order: 3,
                         name: 'firstLastName',
                         type: 'text',
                         required: true,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'First name *'
+                        label: 'First name *',
+                        labelProps: {
+                            alignText: 'left'
+                        }
                     },
                     {
+                        order: 2,
                         name: 'secondLastName',
                         type: 'text',
                         required: true,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'Second name *'
+                        label: 'Second name *',
+                        labelProps: {
+                            alignText: 'left'
+                        }
                     },
                     {
+                        order: 4,
                         name: 'birthday',
                         type: 'date',
                         required: true,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'Birthday *'
-                    }
+                        label: 'Birthday *',
+                        labelProps: {
+                            alignText: 'left'
+                        }
+                    },
+                    {
+                        order: 5,
+                        name: 'test',
+                        type: 'text',
+                        required: true,
+                        maxLength: 50,
+                        minLength: 2,
+                        label: 'Test',
+                        labelProps: {
+                            alignText: 'right'
+                        }
+                    },
                 ],
 
                 navigationButtons: [

@@ -15,7 +15,7 @@
     "existsSidenav":  true,
     "subComponents": {
       "accountComponent": {
-        "order": 3,
+        "order": 1,
         "title": "ACCOUNT",
         "icon": "user",
         "backRoute": "/",
@@ -35,7 +35,7 @@
       },
 
       "warningsComponent": {
-        "order": 1,
+        "order": 3,
         "title": "WARNINGS",
         "icon": "caution",
         "backRoute": "/",

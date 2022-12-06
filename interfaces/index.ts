@@ -9,12 +9,16 @@ export interface FetchProps {
 //Account
 
 export interface inputProps {
+    order: number,
     name: string,
     type: string,
     required: boolean,
     maxLength: number,
     minLength: number,
-    label: string
+    label: string,
+    labelProps?: {
+        alignText: string
+    }
 }
 
 export interface footerButtonProps {
@@ -39,6 +43,7 @@ export interface MainAreaProps {
         header: {
             title: string
         },
+        grid: number,
         form: inputProps[],
         navigationButtons: footerButtonProps[],
     },

@@ -56,6 +56,7 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
         arr.push(data.SidenavComponent.subComponents.sharesComponent)
         console.log(arr)
         console.log(arr.sort((a,b) => (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0)))
+        // @ts-ignore
         setSortedComponents(arr.sort((a,b) => (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0)))
     }
 

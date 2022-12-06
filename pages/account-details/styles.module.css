@@ -1,5 +1,5 @@
 .main{
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -37,25 +37,36 @@
     margin: 30px 0 0 auto!important;
 }
 
-.middleSection >form > div{
-    margin-top: 10px;
+/*.middleSection >form > div{*/
+/*    margin-top: 10px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+
+.contInput{
     display: flex;
     flex-direction: column;
+    max-width: 200px;
+    margin: 5px auto;
 }
 
+.contLabel{
+    margin-bottom: 10px;
+}
 
-.middleSection >form > div >label{
+.label{
     padding-bottom: 10px;
     color: #585858;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.middleSection >form > div > input{
+.contInput > input{
     border-radius: 0!important;
     padding: 10px;
     width: 200px;
     border: 1px solid #647092!important;
-
 }
 
 .button{

@@ -16,6 +16,7 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
     const [sortComponents, setSortComponents] = useState([]);
     const {...comps} = useAppSelector(state => state.componentsData);
     const [components, setComponents] = useState({});
+    const [sortedComponents, setSortedComponents] = useState([]);
 
     const getInitialFetch = async () => {
         const [account, services, shares, warnings] = await Promise.all([
@@ -27,8 +28,8 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
         // @ts-ignore
         setComponents(account, services, shares, warnings);
 
+        // @ts-ignore
         setSortComponents(subComponents.accountComponent);
-        console.log(sortComponents)
     }
 
     function sortElements(){
@@ -44,7 +45,23 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
     }, [sortComponents]);
 
 
+    const getTekAppJSON = async () => {
+        const resp = await fetch('http://localhost:3000/api/tekapp')
+        const data = await resp.json();
+        const srt = data.SidenavComponent.subComponents;
+        const arr = [];
+        arr.push(data.SidenavComponent.subComponents.accountComponent)
+        arr.push(data.SidenavComponent.subComponents.warningsComponent)
+        arr.push(data.SidenavComponent.subComponents.servicesComponent)
+        arr.push(data.SidenavComponent.subComponents.sharesComponent)
+        console.log(arr)
+        console.log(arr.sort((a,b) => (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0)))
+        setSortedComponents(arr.sort((a,b) => (a.order > b.order) ? 1 : ((b.order > a.order) ? -1 : 0)))
+    }
 
+    useEffect(() => {
+        getTekAppJSON();
+    }, [])
 
     return (
         <div className={styles.main}>
@@ -61,11 +78,24 @@ export const Sidenav: FC<SidenavProps> = ({}) => {
 
             <div>
                 <h1 className={styles.headerCheckDisplay}>Account Overview</h1>
+                {/*{*/}
+                {/*    Object.keys(subComponents) && Object.keys(subComponents).map(el => (*/}
+                {/*        <div>*/}
+                {/*            <CardGeneric*/}
+                {/*                // @ts-ignore*/}
+                {/*                data={subComponents[el]}*/}
+                {/*            />*/}
+                {/*        </div>*/}
+
+                {/*    ))*/}
+                {/*}*/}
+
                 {
-                    Object.keys(subComponents) && Object.keys(subComponents).map(el => (
+                    sortedComponents.map(el => (
                         <div>
                             <CardGeneric
-                                data={subComponents[el]}
+                                // @ts-ignore
+                                data={el}
                             />
                         </div>
 

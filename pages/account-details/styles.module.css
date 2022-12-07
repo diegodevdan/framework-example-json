@@ -1,40 +1,40 @@
-.main{
+.main {
     width: 80%;
     margin: 0 auto;
 }
 
-.main > h1{
+.main > h1 {
 
 }
 
 
-.mainArea{
+.mainArea {
 
 }
 
-.topSection{
+.topSection {
 
 }
 
-.topSection > h4{
+.topSection > h4 {
     color: #1E2251;
 }
 
-.contText{
+.contText {
     border-bottom: 1px solid #143cae;
     margin-bottom: 50px;
 }
 
-.contText p{
+.contText p {
     color: rgba(0, 0, 0, 0.55);
 }
 
-.contButtons{
+.contButtons {
     display: flex;
     justify-content: center;
-    flex-direction: row!important;
+    flex-direction: row !important;
     width: 200px;
-    margin: 30px 0 0 auto!important;
+    margin: 30px 0 0 auto !important;
 }
 
 /*.middleSection >form > div{*/
@@ -44,32 +44,35 @@
 /*}*/
 
 
-.contInput{
+.contInput {
     display: flex;
     flex-direction: column;
     max-width: 200px;
     margin: 5px auto;
 }
 
-.contLabel{
+.contLabel {
     margin-bottom: 10px;
 }
 
-.label{
+.label {
     padding-bottom: 10px;
     color: #585858;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.contInput > input{
-    border-radius: 0!important;
+.contInput > input {
+    border-radius: 0 !important;
     padding: 10px;
     width: 200px;
-    border: 1px solid #647092!important;
+    border: 1px solid #647092 !important;
 }
 
-.button{
+.button {
     padding: 5px 50px;
 }
 
+.hide {
+    display: none;
+}

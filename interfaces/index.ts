@@ -16,6 +16,7 @@ export interface inputProps {
     maxLength: number,
     minLength: number,
     label: string,
+    dependents?: string[] | string,
     labelProps?: {
         alignText: string
     }

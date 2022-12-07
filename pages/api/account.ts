@@ -29,7 +29,7 @@ const initState:AccountDataProps = {
                         required: true,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'Name *',
+                        label: 'Name',
                         labelProps: {
                             alignText: 'left'
                         }
@@ -41,7 +41,7 @@ const initState:AccountDataProps = {
                         required: true,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'First name *',
+                        label: 'First name',
                         labelProps: {
                             alignText: 'left'
                         }
@@ -50,10 +50,10 @@ const initState:AccountDataProps = {
                         order: 2,
                         name: 'secondLastName',
                         type: 'text',
-                        required: true,
+                        required: false,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'Second name *',
+                        label: 'Second name',
                         labelProps: {
                             alignText: 'left'
                         }
@@ -65,7 +65,7 @@ const initState:AccountDataProps = {
                         required: true,
                         maxLength: 50,
                         minLength: 2,
-                        label: 'Birthday *',
+                        label: 'Birthday',
                         labelProps: {
                             alignText: 'left'
                         }
@@ -78,6 +78,55 @@ const initState:AccountDataProps = {
                         maxLength: 50,
                         minLength: 2,
                         label: 'Test',
+                        labelProps: {
+                            alignText: 'right'
+                        }
+                    },
+                    {
+                        order: 6,
+                        name: 'state',
+                        type: 'text',
+                        required: true,
+                        maxLength: 50,
+                        minLength: 2,
+                        label: 'State',
+                        labelProps: {
+                            alignText: 'right'
+                        }
+                    },
+                    {
+                        order: 7,
+                        name: 'city',
+                        type: 'text',
+                        required: true,
+                        maxLength: 50,
+                        minLength: 2,
+                        label: 'City',
+                        labelProps: {
+                            alignText: 'right'
+                        }
+                    },
+                    {
+                        order: 8,
+                        name: 'zip',
+                        type: 'number',
+                        required: true,
+                        maxLength: 50,
+                        minLength: 2,
+                        label: 'Zip',
+                        dependents: ['city', 'state'],
+                        labelProps: {
+                            alignText: 'right'
+                        }
+                    },
+                    {
+                        order: 8,
+                        name: 'phone',
+                        type: 'text',
+                        required: true,
+                        maxLength: 50,
+                        minLength: 8,
+                        label: 'Phone contact',
                         labelProps: {
                             alignText: 'right'
                         }

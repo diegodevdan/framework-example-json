@@ -7,6 +7,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {Button, Grid} from '@mantine/core';
 import {useRouter} from "next/router";
 import {setAccountData} from "../../store/slices/account-component";
+import classNames from "classnames";
 
 interface InputProps {
     name: string,
@@ -28,7 +29,7 @@ export default function AccountPage() {
 
     const [{topSection, middleSection, bottomSection}, setMainArea] = useState({} as MainAreaProps);
 
-    const {register, handleSubmit, watch, formState: {errors}} = useForm<InputProps>();
+    const {register, handleSubmit, getValues, formState: {errors}, setValue} = useForm<InputProps>();
 
     const getData = async () => {
         const resp = await fetch(loadData);
@@ -92,6 +93,28 @@ export default function AccountPage() {
         setOrderInput();
     }, [middleSection])
 
+    const formatSpecialInputs = (event:any) => {
+        const currentValue = event.target.value;
+        const formatedValue = currentValue.substr(0, 3)+ '-' + currentValue.substr(3, 4)+ '-' + currentValue.substr(6, 4);
+        if(currentValue.length < 9) return;
+        // @ts-ignore
+        setValue('phone', `${formatedValue}`);
+    }
+
+
+    const showConditionalsInputs = (inputStopper:string | undefined) => {
+        const values = getValues();
+        console.log(values)
+        // @ts-ignore
+        const inputStopperValue = values[inputStopper];
+        console.log(inputStopperValue)
+
+        if(inputStopperValue){
+            return true
+        }
+
+        return false;
+    }
 
     return (
         <NavigationLayout>
@@ -117,7 +140,7 @@ export default function AccountPage() {
                                             // middleSection.form.map(el => (
                                             sortedInputs.map(el => (
                                                 <Grid.Col span={gridFormColumns}>
-                                                    <div className={styles.contInput}>
+                                                    <div className={classNames(styles.contInput)}>
                                                         <div
                                                             className={styles.contLabel}
                                                             style={{
@@ -127,7 +150,7 @@ export default function AccountPage() {
                                                             <label
                                                                 className={styles.label}
                                                                 htmlFor={el.name}
-                                                            >{el.label}</label>
+                                                            >{el.label} {el.required && '*'}</label>
                                                         </div>
                                                         <input
                                                             // @ts-ignore
@@ -137,7 +160,9 @@ export default function AccountPage() {
                                                             maxLength={el.maxLength}
                                                             minLength={el.minLength}
                                                             // @ts-ignore
-                                                            {...register(el.name)}
+                                                            {...register(el.name, {
+                                                                onChange: formatSpecialInputs
+                                                            })}
                                                         />
                                                     </div>
                                                 </Grid.Col>
@@ -178,4 +203,3 @@ export default function AccountPage() {
         </NavigationLayout>
     )
 }
-

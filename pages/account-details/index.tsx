@@ -93,7 +93,8 @@ export default function AccountPage() {
         setOrderInput();
     }, [middleSection])
 
-    const formatSpecialInputs = (event:any) => {
+    const formatSpecialInputs = (isSpecial:boolean, event:any) => {
+        if(!isSpecial) return;
         const currentValue = event.target.value;
         const formatedValue = currentValue.substr(0, 3)+ '-' + currentValue.substr(3, 4)+ '-' + currentValue.substr(6, 4);
         if(currentValue.length < 9) return;
@@ -161,7 +162,8 @@ export default function AccountPage() {
                                                             minLength={el.minLength}
                                                             // @ts-ignore
                                                             {...register(el.name, {
-                                                                onChange: formatSpecialInputs
+                                                                // @ts-ignore
+                                                                onChange: (e) => formatSpecialInputs(el.isSpecial, (e))
                                                             })}
                                                         />
                                                     </div>

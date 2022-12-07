@@ -120,7 +120,8 @@ const initState:AccountDataProps = {
                         }
                     },
                     {
-                        order: 8,
+                        isSpecial: true,
+                        order: 9,
                         name: 'phone',
                         type: 'text',
                         required: true,

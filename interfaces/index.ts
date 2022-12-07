@@ -9,6 +9,7 @@ export interface FetchProps {
 //Account
 
 export interface inputProps {
+    isSpecial?: boolean,
     order: number,
     name: string,
     type: string,
